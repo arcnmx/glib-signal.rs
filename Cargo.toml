@@ -20,20 +20,21 @@ include = [
 ]
 
 [package.metadata.docs.rs]
-features = ["dox", "futures"]
+features = ["futures"]
+rustc-args = ["--cfg", "docsrs"]
+rustdoc-args = ["--cfg", "docsrs", "--generate-link-to-definition"]
 
 [badges]
 maintenance = { status = "passively-maintained" }
 
 [dependencies]
-glib = { version = "0.17" }
+glib = { version = "0.18" }
 futures-core = { version = "0.3", optional = true }
 futures-channel = { version = "0.3", optional = true }
 
 [features]
 default = []
 futures = ["dep:futures-core", "dep:futures-channel"]
-dox = ["glib/dox"]
 
 [workspace]
 members = ["examples"]

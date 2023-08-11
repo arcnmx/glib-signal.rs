@@ -1,5 +1,5 @@
 #![doc(html_root_url = "https://docs.rs/glib-signal/0.2.0/")]
-#![cfg_attr(feature = "dox", feature(doc_notable_trait, doc_cfg))]
+#![cfg_attr(docsrs, feature(doc_notable_trait, doc_cfg))]
 
 #[cfg(feature = "futures")]
 pub use self::signal_stream::{ConnectEof, OnceFuture, SignalStream};
@@ -102,7 +102,7 @@ pub trait BuildSignal: BuildableSignal {
 	}
 }
 
-#[cfg_attr(feature = "dox", doc(notable_trait))]
+#[cfg_attr(docsrs, doc(notable_trait))]
 pub trait Notifies<T: Signal>: ObjectType {}
 
 #[derive(Copy, Clone, Debug)]

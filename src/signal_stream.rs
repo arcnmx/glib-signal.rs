@@ -9,7 +9,7 @@ use {
 };
 
 #[must_use]
-#[cfg_attr(feature = "dox", doc(cfg(feature = "futures")))]
+#[cfg_attr(docsrs, doc(cfg(feature = "futures")))]
 #[derive(Debug)]
 pub struct SignalStream<O: ObjectType, T> {
 	rx: mpsc::UnboundedReceiver<T>,

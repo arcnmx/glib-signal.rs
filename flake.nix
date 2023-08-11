@@ -37,7 +37,7 @@
               version = nixlib.versions.majorMinor self.lib.crate.dependencies.glib.version;
             in "https://gtk-rs.org/gtk-rs-core/stable/${version}/docs/";
           };
-        };
+        } ++ nixlib.optionals enableRustdoc self.lib.crate.package.metadata.docs.rs.rustdoc-args;
       };
       stable = { rust'stable, outputs'devShells'plain }: outputs'devShells'plain.override {
         inherit (rust'stable) mkShell;

@@ -1,4 +1,4 @@
-use {glib_signal_examples::*, glib_signal::ObjectSignalExt};
+use {glib_signal::ObjectSignalExt, glib_signal_examples::*};
 
 #[test]
 fn simple_signals() {

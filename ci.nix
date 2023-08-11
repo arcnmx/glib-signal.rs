@@ -1,5 +1,5 @@
 { config, channels, lib, ... }: with channels.nixpkgs; with lib; let
-  inherit (import ./. { inherit pkgs; }) checks;
+  inherit (import ./. { pkgs = null; }) checks;
 in {
   config = {
     name = "glib-signal.rs";
