@@ -43,8 +43,7 @@
         inherit (rust'stable) mkShell;
         enableRust = false;
       };
-      dev = { rust'unstable, outputs'devShells'plain }: let
-      in outputs'devShells'plain.override {
+      dev = { rust'unstable, outputs'devShells'plain }: outputs'devShells'plain.override {
         inherit (rust'unstable) mkShell;
         enableRust = false;
         enableRustdoc = true;
@@ -97,7 +96,7 @@
         meta.name = "cargo test --workspace && cargo run -p glib-signal-examples --bin async";
       };
     };
-    legacyPackages = { callPackageSet }: callPackageSet {
+    legacyPackages = {
       source = { rust'builders }: rust'builders.wrapSource self.lib.crate.src;
 
       readme = { rust'builders }: rust'builders.adoc2md {
@@ -127,8 +126,8 @@
         cargoDocFlags = [ "--no-deps" "--workspace" ];
         inherit (shell) buildInputs nativeBuildInputs;
       };
-    } { };
-    lib = with nixlib; {
+    };
+    lib = {
       crate = rust.lib.importCargo ./Cargo.toml;
       inherit (self.lib.crate.package) version;
       releaseTag = "v${self.lib.version}";

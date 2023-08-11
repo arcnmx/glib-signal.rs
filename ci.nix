@@ -3,13 +3,16 @@
 in {
   config = {
     name = "glib-signal.rs";
-    ci.gh-actions.enable = true;
+    ci = {
+      version = "v0.6";
+      gh-actions.enable = true;
+    };
     cache.cachix = {
       ci.signingKey = "";
       arc.enable = true;
     };
     channels = {
-      nixpkgs = "22.11";
+      nixpkgs = "23.05";
     };
     tasks = {
       rustfmt.inputs = singleton checks.rustfmt;
