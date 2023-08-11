@@ -6,7 +6,7 @@ edition = "2021"
 publish = false
 
 [dependencies]
-glib-signal = { version = "0.2", features = ["futures"], path = "../" }
+glib-signal = { version = "0.3", features = ["futures"], path = "../" }
 futures = "0.3"
 glib = { version = "0.18" }
 ctrlc = { version = "3.0", features = ["termination"] }
