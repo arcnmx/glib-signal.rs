@@ -3,7 +3,7 @@ name = "glib-signal"
 version = "0.3.0" # keep in sync with html_root_url
 authors = ["arcnmx"]
 edition = "2021"
-rust-version = "1.60"
+rust-version = "1.70"
 
 description = "GObject signal bindings"
 keywords = ["glib", "gobject", "signal", "async", "futures"]
