@@ -1,6 +1,6 @@
 [package]
 name = "glib-signal"
-version = "0.3.0" # keep in sync with html_root_url
+version = "0.4.0" # keep in sync with html_root_url
 authors = ["arcnmx"]
 edition = "2021"
 rust-version = "1.70"
@@ -28,7 +28,7 @@ rustdoc-args = ["--cfg", "docsrs", "--generate-link-to-definition"]
 maintenance = { status = "passively-maintained" }
 
 [dependencies]
-glib = { version = "0.18" }
+glib = { version = "0.19" }
 futures-core = { version = "0.3", optional = true }
 futures-channel = { version = "0.3", optional = true }
 

@@ -1,4 +1,4 @@
-#![doc(html_root_url = "https://docs.rs/glib-signal/0.3.0/")]
+#![doc(html_root_url = "https://docs.rs/glib-signal/0.4.0/")]
 #![cfg_attr(docsrs, feature(doc_notable_trait, doc_cfg))]
 
 #[cfg(feature = "futures")]
@@ -16,10 +16,12 @@ pub use {
 };
 use {
 	glib::{
+		object::{ObjectExt, ObjectType},
 		subclass::{signal::SignalBuilder, SignalId},
 		translate::{from_glib, IntoGlib, ToGlibPtr},
+		types::StaticType,
 		value::FromValue,
-		BoolError, Closure, ObjectExt, ObjectType, Quark, SignalHandlerId, StaticType,
+		BoolError, Closure, Quark, SignalHandlerId,
 	},
 	std::{fmt::Debug, marker::PhantomData},
 };

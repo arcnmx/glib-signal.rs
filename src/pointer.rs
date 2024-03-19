@@ -1,5 +1,5 @@
 use {
-	glib::{translate::ToGlibPtr, value::FromValue, StaticType, Type, Value},
+	glib::{translate::ToGlibPtr, types::StaticType, value::FromValue, Type, Value},
 	std::ops::Deref,
 };
 

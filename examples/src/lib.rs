@@ -1,15 +1,13 @@
 use {
-	glib::ToValue,
+	glib::value::ToValue,
 	glib_signal::{BuildSignal, BuildableSignal, DetailedSignal, Signal, SignalFlags},
 };
 
 mod imp {
 	use {
-		glib::{
-			once_cell::sync::OnceCell,
-			subclass::{object::ObjectImpl, signal::Signal, types::ObjectSubclass},
-		},
+		glib::subclass::{object::ObjectImpl, signal::Signal, types::ObjectSubclass},
 		glib_signal::BuildSignal as _,
+		once_cell::sync::OnceCell,
 	};
 
 	#[derive(Default)]
@@ -42,7 +40,7 @@ impl TestObject {
 	}
 
 	pub fn something(&self, s: &str, else_: bool) -> u64 {
-		use glib::ObjectExt;
+		use glib::object::ObjectExt;
 		let s = s.to_value();
 		let something = TestObjectSomething::signal();
 		if else_ {
@@ -53,7 +51,7 @@ impl TestObject {
 	}
 
 	pub fn nothing(&self, s: &str) {
-		use glib::ObjectExt;
+		use glib::object::ObjectExt;
 		let s = s.to_value();
 		let nothing = TestObjectNothing::signal();
 		self.emit(nothing, &[&s])

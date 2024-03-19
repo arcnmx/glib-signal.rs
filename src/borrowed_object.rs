@@ -1,8 +1,10 @@
 use {
 	glib::{
+		object::ObjectType,
 		translate::{from_glib_borrow, FromGlibPtrBorrow, ToGlibPtr},
+		types::StaticType,
 		value::FromValue,
-		ObjectType, StaticType, Type, Value,
+		Type, Value,
 	},
 	std::{marker::PhantomData, mem::ManuallyDrop, ops::Deref},
 };

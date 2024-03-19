@@ -1,7 +1,8 @@
 use {
 	glib::{
+		types::StaticType,
 		value::{FromValue, ValueTypeChecker, ValueTypeMismatchError, ValueTypeMismatchOrNoneError},
-		StaticType, Type, Value,
+		Type, Value,
 	},
 	std::error::Error,
 };

@@ -2,7 +2,12 @@ use {
 	crate::{BorrowedObject, ConnectDetails, DetailedSignal, FromValues, ObjectSignalExt, ToValueOption},
 	futures_channel::mpsc,
 	futures_core::{ready, FusedFuture, FusedStream, Stream},
-	glib::{g_warning, value::FromValue, Closure, ObjectExt, ObjectType, SignalHandlerId, Value, WeakRef},
+	glib::{
+		g_warning,
+		object::{ObjectExt, ObjectType},
+		value::FromValue,
+		Closure, SignalHandlerId, Value, WeakRef,
+	},
 	std::{
 		error::Error, fmt, future::Future, hint::unreachable_unchecked, io, mem::ManuallyDrop, pin::Pin, ptr, task::Poll,
 	},
